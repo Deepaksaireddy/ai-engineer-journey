@@ -1,0 +1,141 @@
+Week 2: OPP, Error handling, File I/O
+This Week: Understanding of Class, Objects, Attributes, Methods, Inheritance, Polymorphism, encapsulation, Exception handling, File I/O
+Class : It holds all kinds of objects, methods and attributes, it is the main thing for your code where everything is organized.
+Objects : It is mainly seen as real time memory like if you enter something it directly goes into your storage and sits there.
+Attribute : These are the things where you define the values that belongs to an object
+Method : It is an action that an object can perform
+
+Employee (Class)
+|
+|- defines:
+|     name
+|     age
+|     salary
+|     work()
+|
+|----------------
+|               |
+v               v
+
+emp1            emp2
+|               |
+|- name         |- name
+|- age          |- age
+|- salary       |- salary
+|- work()       |- work()
+
+here
+1. Employee - class
+2. Name of the emp1 ex: Deepak - object (data gets stores)
+3. name age salary -  attributes
+4. work() - method (if it is independent of class it is function)
+
+xxxx------------------------------------------------------------------------xxxx
+
+Encapsulation : Object is responsible for protecting and managing its own data
+    Ex : Designing UI in such a way that making user to take action rather than they are changing the code for their own use
+    why : to protect the data and ensure the changes are done only by valid operations
+Abstraction : showing what someone can do or what kind of actions are taken not how it is done (like showing the UI rather than the allocation of memory etc.)
+    Ex : if you have to append a number you see the number appended but in background the memory allocation, array resizing are not shown but they are done, the part which is not shown is due to the code follows the abstraction
+    why: to hide complex parts and show cleaner UI
+Inheritance : Creating new class with the help of existing class in order to avoid the duplication of code
+    Ex : create a clas of employee and can use that class in Developer, Engineer, Manager where the roles are different, the inner actions are different but the data for basic information is same
+    why : to reuse the code to avoid the duplication
+Polymorphism : Different objects responds to same method call in their own way
+    Ex : for an employee you ask what is his role some say they are managers, some says they are engineers some says they are developers but at the end they are employees
+    why : to write the code that works with many objects in their own way
+
+Employee
+| salary * commission
+|-- Developer (salary * commission_1)
+|-- Engineer (salary * commission_2)
+|-- Manager (salary * commission_3)
+
+here
+1. Developer, Engineer, Manager uses same employee code - inheritance
+2. If the commission of manager cannot be changed by engineer or while changing the commission of manager engineer's commission cannot be changed - encapsulation
+3. the salary * commission class is used by all the employees but the calculations internally is different- polymorphism
+
+xxxx------------------------------------------------------------------------xxxx
+
+Exception : The code couldn't do what we ask, it is not a bug, not always a programming mistake, sometime user mistake, or network failure etc.
+Exception Handling :
+    1. Try : It means I am going to attempt this
+    2. Except : if something goes wrong in try, the code comes to here, there can be multiple exceptions, and in exception we can add else like something in exception doesn't match goes to else
+    3. Finally : No matter what executes or what not executes it goes from finally,  it means that a code goes from try and if we have finally, anything written in that will also be executed same along with except
+
+Example :
+    try:                                    # tries this code
+        customer = get_customer()
+        invoice = create_invoice(customer)
+        save_invoice(invoice)
+
+    except DatabaseError:                   # if there is a connection error
+        print("Database unavailable.")
+
+    except FileNotFoundError:               # if there is an error in file fetching
+        print("Template missing.")
+
+    finally:                                # it executes no matter what
+        disconnect_database()
+
+xxxx------------------------------------------------------------------------xxxx
+
+File I/0 : Imagine doing work with a data in a file, so python has a feature for using file data directly like :
+    1. Opening a File : It is accessing a file
+    2. Reading a File : After getting the access we can read the file
+    2.1 : Reading 1 line in a file :
+    if there are 3 entries for example
+            Deepak
+            Rahul
+            priya
+
+         Ex: with open("employees.txt") as file:
+                print(file.readline())
+         output :
+         > Deepak
+         call again
+         > Rahul
+
+    2.2 : Reading all lines :
+        Ex : with open("employee.txt") as file
+                lines = file.readlines()
+        output :
+        [
+        'Deepak\n',
+        'Rahul\n',
+        'Priya\n'
+        ]
+    3. Closing a File : Every file opening will takes memory, File gets locked, and program slows so we need to close a file which we opened
+
+    Ex :
+        file = open("employees.txt")   # access/Opens a file
+        print(file.read())             # reads a file and prints
+        file.close()                   # Closes file after its use
+
+    Ex : In a professional way - here as the block ends, the file automatically closes
+            with open("employees.txt") as file :
+                print(file.read())                  #here no need for close()
+
+    4. Writing a file : it creates a new file or replaces the existing ones
+            with  open(employees.txt,"w") as file:
+                file.write("Janaki")
+       file becomes : Janaki           # even it there is a content, it overwrites
+    4.1. Append : It will add anything at the end
+            with  open(employees.txt,"a") as file :
+                file.write("\nRam")
+        file becomes : Janaki
+                       Ram
+
+    Modes :
+    r  Read only
+    w  Write only
+    a  Append
+    r+ Read and write
+    w+ Write and read
+    a+ Append and read
+
+xxxx------------------------------------------------------------------------xxxx
+At Last I have build a library Management system where You login in as a Librarian or a member, and then continue with the activity
+here, I used OOP concepts for this mini project to carry on with the activities
+xxxx------------------------------------------------------------------------xxxx
