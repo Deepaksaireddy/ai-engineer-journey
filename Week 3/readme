@@ -1,0 +1,101 @@
+Week 3 :
+understanding of lists, tuples, sets, dictionary,
+Collections and types : Lists, Tuples, Sets, Dictionaries, they are used to managed the large data like storing multiple values in 1 variable
+the best way of understanding is to compare
+1. Lists
+books = ["Python", "Java", "Oracle"]
+Index: (in memory)
+0 -> Python
+1 -> Java
+2 -> Oracle
+books[0] = Python, books[-1] = Oracle
+
+books[1] = "C++"   - Lists are mutable.
+Python
+C++
+Oracle
+
+books.append("SQL")
+Python
+C++
+Oracle
+SQL           -Append always adds at the end.
+
+books.remove("Oracle")    -Remove by value
+books.pop(2)              -Remove by index
+del books[1]              -Delete
+books.clear()             -Clear
+len(books)                - length
+
+append()	-Add item
+insert()	-Insert item
+remove()	-Remove value
+pop()	    -Remove by index
+clear()	    -Empty list
+sort()	    -Sort
+reverse()	-Reverse
+copy()	    -Copy
+count()	    -Count occurrences
+index()	    -Find position
+
+2. Tuple (it is almost identical to list, the difference is you cannot modify it)
+book = ("Python", "Java", "Oracle")
+book[0] = "SQL"   - this gives TypeError because tuples are immutable.
+Ex: Date of birth, Longitudes, latitudes
+- only 2 methods
+count()
+index()
+
+| List         | Tuple       |
+|--------------|-------------|
+| Mutable      | Immutable   |
+| Faster? No   | Yes         |
+| More memory  | Less memory |
+| Many methods | Very few    |
+
+3. Set - to have a unique value in the values - these are unordered, mutable, unique
+books = {"Python", "Java", "Python", "Oracle"}
+Python
+Java
+Oracle
+
+books.add("SQL")      - adding
+books.remove("Java")  - removing
+books.discard("ABC")  - discarding   (difference is remove throws error and discard don't
+
+4. Dictionary  - has key, value - according to the key we need to assign value
+employee = {
+    "name":"John",
+    "salary":50000,
+    "department":"IT"
+}
+Key -> Value
+name -> John
+salary -> 50000
+department -> IT
+
+employee["salary"] -> 50000
+employee["salary"] = 70000  - modify
+employee["city"] = "Lusaka" - add
+del employee["city"]      - delete
+for key in employee:
+    print(key)            - using loops
+->name
+  salary
+  department
+
+employee.keys()         - for keys
+employee.values()       - for values
+employee.items()        - for both
+
+Comprehension - a powerful feature
+
+
+| Feature    | List | Tuple | Set  | Dictionary        |
+| Syntax     | []   | ()    | {}   | {key: value}      |
+|------------|------|-------|------|-------------------|
+| Ordered    | Y    | Y     | NN   | Y                 |
+| Mutable    | Y    | NN    | Y    | Y                 |
+| Duplicates | Y    | Y     | NN   | Keys NN, Values Y |
+| Indexed    | Y    | Y     | NN   | By keys           |
+
