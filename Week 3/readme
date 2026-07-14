@@ -101,3 +101,72 @@ Comprehension - a powerful feature
 
 +++++======================================================++++++
 Big O notations : Time and space complexity
+1. Time complexity: measures the time taken for an operation to perform
+
+Big-O notation :
+O(1) - (Constant time) : no matter how much data exists, the time taken is once per operation
+Ex :
+numbers = [10,20,30,40,50]
+print(numbers[2])   -- here only 1 operation, directly jumps to the 2nd index
+|
+|_______ O(1)
+|_______
+O(log n) - (Logarithmic time) : instead of checking 1 by 1 it cuts the search into half like guessing a number
+Ex : Binary search
+|    /O(log n)
+|  /
+|/______ after every consecutive point he value is doubled
+O(n^2) (Quadratic) : this is how much time the loop takes
+Ex:
+numbers = [1,2,3]
+for i in numbers:
+    for j in numbers:
+        print(i, j)
+
+O(n^3) (Qubic) : this is how much time the nested loop takes
+Ex:
+for i in arr:
+    for j in arr:
+        for k in arr:
+            print(i, j, k)
+
+ - here the
+ best case is O(1) and O(log n)
+ Fair Case is O(n), O(n^2) and O(n^3)
+ Worst case is O(2^n) and O(n!)
+
+2. Space Complexity: How much extra memory an algorithm needs
+
+Big-O notation :
+O(1) : memory never grows
+Ex :
+def add(a, b):
+    return a + b
+
+O(m): Extra list grows with input
+Ex:
+numbers = [1,2,3,4]
+copy = []
+for n in numbers:
+    copy.append(n)  --here the memory is doubled
+
+O(n^2) : memory becomes n*n
+Ex:
+matrix = []
+for i in range(n):
+    row = []
+    for j in range(n):
+        row.append(0)
+    matrix.append(row)
+
+Big - O rules :
+1. Ignore constants
+Ex: for i in range(2*n): -> O(n)
+2. Keep the fastest growing term
+Ex : O(n² + n + 100)  ->  O(n²)  #this is a dominant term
+3. Every variable is separate
+Ex :
+for i in range(n):
+    print(i)
+for j in range(m):
+    print(j)                    #O(n + m)
