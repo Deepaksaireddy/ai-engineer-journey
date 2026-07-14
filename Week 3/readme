@@ -1,5 +1,5 @@
 Week 3 :
-understanding of lists, tuples, sets, dictionary,
+understanding of lists, tuples, sets, dictionary, String Methods, Slicing, f-formatting, Big O notations : Time and space complexity
 Collections and types : Lists, Tuples, Sets, Dictionaries, they are used to managed the large data like storing multiple values in 1 variable
 the best way of understanding is to compare
 1. Lists
@@ -99,3 +99,5 @@ Comprehension - a powerful feature
 | Duplicates | Y    | Y     | NN   | Keys NN, Values Y |
 | Indexed    | Y    | Y     | NN   | By keys           |
 
++++++======================================================++++++
+Big O notations : Time and space complexity
